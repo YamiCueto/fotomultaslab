@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Gradiente para efecto moderno -->
+  <defs>
+    <linearGradient id="speedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8c42;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Cuerpo de la cámara -->
+  <rect x="18" y="22" width="28" height="20" rx="3" fill="url(#speedGradient)" filter="url(#glow)"/>
+  
+  <!-- Lente -->
+  <circle cx="32" cy="32" r="8" fill="#0a0e27" opacity="0.9"/>
+  <circle cx="32" cy="32" r="5" fill="#ff6b35" opacity="0.6"/>
+  <circle cx="30" cy="30" r="2" fill="#ffffff" opacity="0.8"/>
+  
+  <!-- Indicador de velocidad (líneas de movimiento) -->
+  <path d="M 10 28 L 14 28 M 8 32 L 14 32 M 10 36 L 14 36" 
+        stroke="#ff6b35" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  
+  <!-- Base de montaje -->
+  <rect x="28" y="42" width="8" height="8" rx="1" fill="#555"/>
+  <rect x="30" y="50" width="4" height="6" fill="#333"/>
+  
+  <!-- Flash superior -->
+  <circle cx="40" cy="26" r="2.5" fill="#ffd700" opacity="0.8"/>
+  <path d="M 40 23 L 37 26 L 40 26 L 37 29" fill="#fff59d" opacity="0.6"/>
+</svg>

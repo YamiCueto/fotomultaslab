@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Mapa interactivo de cámaras de fotodetección en Barranquilla, Colombia" />
+  <title>Fotomultas Lab</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- MarkerCluster -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <!-- Fuse (UMD) -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.6.0/dist/fuse.min.js"></script>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="header panel">
+    <div class="header-left">
+      <img src="./assets/logo.svg" alt="Logo" class="logo" />
+      <h1>Fotomultas Lab</h1>
+    </div>
+
+    <div class="header-right">
+      <div class="counter">0</div>
+      <button id="btnTheme" class="btn-icon" aria-label="Cambiar tema">🌙</button>
+      <button id="btnMiUbicacion" class="btn-icon" title="Mi ubicación">📍</button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar panel" id="sidebar">
+      <div class="sidebar-top">
+        <input id="searchInput" class="search" placeholder="Buscar dirección o cámara..." aria-label="Buscar cámaras" />
+
+        <div class="filters">
+          <label><input type="checkbox" data-type="VELOCIDAD" /> Velocidad</label>
+          <label><input type="checkbox" data-type="LUZ ROJA" /> Luz roja</label>
+          <label><input type="checkbox" data-type="CRUCE" /> Cruce</label>
+        </div>
+      </div>
+
+      <div class="list" id="cameraList" aria-live="polite">
+        <!-- Lista de cámaras (dinámica) -->
+      </div>
+    </aside>
+
+    <main class="map-container">
+      <div id="map"></div>
+    </main>
+  </div>
+
+  <footer class="footer panel">
+    <div>Datos actualizados: Oct 2025 | Fuente: DATT Barranquilla</div>
+    <div>
+      <a href="https://github.com/YamiCueto/fotomultaslab" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

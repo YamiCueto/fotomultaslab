@@ -1,0 +1,610 @@
+[
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.8004, 10.98087]
+    },
+    "latitud": "10.98087",
+    "longitud": "-74.8004",
+    "no": "1.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 1\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.98087\u003Cbr\u003ELONGITUD: -74.8004",
+    "name": "Calle 61 entre carreras 34 y 35",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.8004, 10.98087]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.81432, 10.98943]
+    },
+    "latitud": "10.98943",
+    "longitud": "-74.81432",
+    "no": "2.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 2\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.98943\u003Cbr\u003ELONGITUD: -74.81432",
+    "name": "Calle 76  # 38C - 110",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.81432, 10.98943]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.78458, 10.94667]
+    },
+    "latitud": "10.94667",
+    "longitud": "-74.78458",
+    "no": "3.0",
+    "tipo_de_infracci_n": "NO DETENERSE LUZ ROJA - EXC VELOCIDAD - PARADA SOBRE CEBRA",
+    "description": "No.: 3\u003Cbr\u003ETIPO DE INFRACCIÓN: NO DETENERSE LUZ ROJA - EXC VELOCIDAD - PARADA SOBRE CEBRA \u003Cbr\u003ELATITUD: 10.94667\u003Cbr\u003ELONGITUD: -74.78458",
+    "name": "Calle 30 # 4B-350",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.78458, 10.94667]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.810864, 10.985675]
+    },
+    "latitud": "10.985675",
+    "longitud": "-74.810864",
+    "no": "4.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 4\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.985675\u003Cbr\u003ELONGITUD: -74.810864",
+    "name": "Calle 72 # 38-79",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.810864, 10.985675]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.80349, 10.95849]
+    },
+    "latitud": "10.95849",
+    "longitud": "-74.80349",
+    "no": "5.0",
+    "tipo_de_infracci_n": "NO DETENERSE LUZ ROJA - EXC VELOCIDAD - PARADA SOBRE CEBRA",
+    "description": "No.: 5\u003Cbr\u003ETIPO DE INFRACCIÓN: NO DETENERSE LUZ ROJA - EXC VELOCIDAD - PARADA SOBRE CEBRA \u003Cbr\u003ELATITUD: 10.95849\u003Cbr\u003ELONGITUD: -74.80349",
+    "name": "Calle 56 # 14 - 24",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.80349, 10.95849]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.79918, 10.92959]
+    },
+    "latitud": "10.92959",
+    "longitud": "-74.79918",
+    "no": "6.0",
+    "tipo_de_infracci_n": "NO DETENERSE LUZ ROJA - EXC VELOCIDAD - PARADA SOBRE CEBRA",
+    "description": "No.: 6\u003Cbr\u003ETIPO DE INFRACCIÓN: NO DETENERSE LUZ ROJA - EXC VELOCIDAD - PARADA SOBRE CEBRA \u003Cbr\u003ELATITUD: 10.92959\u003Cbr\u003ELONGITUD: -74.79918",
+    "name": "Calle 45 # 1Sur - 39",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.79918, 10.92959]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.83406, 11.0131]
+    },
+    "latitud": "11.0131",
+    "longitud": "-74.83406",
+    "no": "7.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 7\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 11.0131\u003Cbr\u003ELONGITUD: -74.83406",
+    "name": "Carrera 51B - Calle 102",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.83406, 11.0131]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.81055, 11.0032]
+    },
+    "latitud": "11.0032",
+    "longitud": "-74.81055",
+    "no": "8.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 8\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 11.0032\u003Cbr\u003ELONGITUD: -74.81055",
+    "name": "Carrera 51B # 79-192",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.81055, 11.0032]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.81841, 11.00938]
+    },
+    "latitud": "11.00938",
+    "longitud": "-74.81841",
+    "no": "9.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 9\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 11.00938\u003Cbr\u003ELONGITUD: -74.81841",
+    "name": "Carrera 53 entre calles 86 y 87",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.81841, 11.00938]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.77858, 10.9402005]
+    },
+    "latitud": "10.9402005",
+    "longitud": "-74.77858",
+    "no": "10.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 10\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.9402005\u003Cbr\u003ELONGITUD: -74.77858",
+    "name": "Calle 19 entre carreras 3D(Boulevard)",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.77858, 10.9402005]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.7777, 10.94252]
+    },
+    "latitud": "10.94252",
+    "longitud": "-74.7777",
+    "no": "11.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 11\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.94252\u003Cbr\u003ELONGITUD: -74.7777",
+    "name": "Calle 19 entre carreras 4C y 5A (Cancha)",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.7777, 10.94252]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.83351, 11.00788]
+    },
+    "latitud": "11.00788",
+    "longitud": "-74.83351",
+    "no": "12.0",
+    "tipo_de_infracci_n": "NO DETENERSE LUZ ROJA - EXC VELOCIDAD - PARADA SOBRE CEBRA",
+    "description": "No.: 12\u003Cbr\u003ETIPO DE INFRACCIÓN: NO DETENERSE LUZ ROJA - EXC VELOCIDAD - PARADA SOBRE CEBRA \u003Cbr\u003ELATITUD: 11.00788\u003Cbr\u003ELONGITUD: -74.83351",
+    "name": "Carrera 46 - calle 100 esquina",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.83351, 11.00788]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.7925, 11.01211]
+    },
+    "latitud": "11.01211",
+    "longitud": "-74.7925",
+    "no": "13.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 13\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 11.01211\u003Cbr\u003ELONGITUD: -74.7925",
+    "name": "Via 40 # 73-290",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.7925, 11.01211]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.81144, 11.01113]
+    },
+    "latitud": "11.01113",
+    "longitud": "-74.81144",
+    "no": "14.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 14\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 11.01113\u003Cbr\u003ELONGITUD: -74.81144",
+    "name": "Calle 84 # 59-34",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.81144, 11.01113]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.79308, 10.96212]
+    },
+    "latitud": "10.96212",
+    "longitud": "-74.79308",
+    "no": "15.0",
+    "tipo_de_infracci_n": "NO DETENERSE LUZ ROJA - EXC VELOCIDAD - PARADA SOBRE CEBRA",
+    "description": "No.: 15\u003Cbr\u003ETIPO DE INFRACCIÓN: NO DETENERSE LUZ ROJA - EXC VELOCIDAD - PARADA SOBRE CEBRA \u003Cbr\u003ELATITUD: 10.96212\u003Cbr\u003ELONGITUD: -74.79308",
+    "name": "Calle 45 # 21-39",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.79308, 10.96212]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.79337, 10.96134]
+    },
+    "latitud": "10.96134",
+    "longitud": "-74.79337",
+    "no": "16.0",
+    "tipo_de_infracci_n": "NO DETENERSE LUZ ROJA - EXC VELOCIDAD - PARADA SOBRE CEBRA",
+    "description": "No.: 16\u003Cbr\u003ETIPO DE INFRACCIÓN: NO DETENERSE LUZ ROJA - EXC VELOCIDAD - PARADA SOBRE CEBRA \u003Cbr\u003ELATITUD: 10.96134\u003Cbr\u003ELONGITUD: -74.79337",
+    "name": "Calle 45 # 21 - 18",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.79337, 10.96134]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.83612, 10.97787]
+    },
+    "latitud": "10.97787",
+    "longitud": "-74.83612",
+    "no": "17.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 17\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.97787\u003Cbr\u003ELONGITUD: -74.83612",
+    "name": "Calle 110 # 31 - 15",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.83612, 10.97787]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.83624, 10.97871]
+    },
+    "latitud": "10.97871",
+    "longitud": "-74.83624",
+    "no": "18.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 18\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.97871\u003Cbr\u003ELONGITUD: -74.83624",
+    "name": "Calle 110#29-120 (centro industrial)",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.83624, 10.97871]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.83808, 10.96257]
+    },
+    "latitud": "10.96257",
+    "longitud": "-74.83808",
+    "no": "19.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 19\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.96257\u003Cbr\u003ELONGITUD: -74.83808",
+    "name": "Calle 110# 10 - 427 (Norte-Sur)",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.83808, 10.96257]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.83793, 10.96272]
+    },
+    "latitud": "10.96272",
+    "longitud": "-74.83793",
+    "no": "20.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 20\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.96272\u003Cbr\u003ELONGITUD: -74.83793",
+    "name": "Calle 110# 10 - 427",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.83793, 10.96272]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.81622, 10.9475]
+    },
+    "latitud": "10.9475",
+    "longitud": "-74.81622",
+    "no": "21.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 21\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.9475\u003Cbr\u003ELONGITUD: -74.81622",
+    "name": "Carrera 6 - Calle 72 / carrera 56 # 65-44",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.81622, 10.9475]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.89345, 10.95749]
+    },
+    "latitud": "10.95749",
+    "longitud": "-74.89345",
+    "no": "22.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 22\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.95749\u003Cbr\u003ELONGITUD: -74.89345",
+    "name": "Via 11 # 8 - 21",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.89345, 10.95749]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.830563, 10.943326]
+    },
+    "latitud": "10.943326",
+    "longitud": "-74.830563",
+    "no": "23.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 23\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.943326\u003Cbr\u003ELONGITUD: -74.830563",
+    "name": "Carrera 6 (Cordialidad) entre calles 99B y 99C",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.830563, 10.943326]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.83438, 11.01742]
+    },
+    "latitud": "11.01742",
+    "longitud": "-74.83438",
+    "no": "24.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 24\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 11.01742\u003Cbr\u003ELONGITUD: -74.83438",
+    "name": "Carrera 53 - Calle 106",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.83438, 11.01742]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.82514, 11.01575]
+    },
+    "latitud": "11.01575",
+    "longitud": "-74.82514",
+    "no": "25.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 25\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 11.01575\u003Cbr\u003ELONGITUD: -74.82514",
+    "name": "Calle 98 # 56-162",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.82514, 11.01575]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.823, 10.97109]
+    },
+    "latitud": "10.97109",
+    "longitud": "-74.823",
+    "no": "26.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 26\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.97109\u003Cbr\u003ELONGITUD: -74.823",
+    "name": "Carrera 21 # 78-44",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.823, 10.97109]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.77608, 10.95356]
+    },
+    "latitud": "10.95356",
+    "longitud": "-74.77608",
+    "no": "27.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 27\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.95356\u003Cbr\u003ELONGITUD: -74.77608",
+    "name": "Carrera 15 # 18 - 102",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.77608, 10.95356]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.82071, 11.01561]
+    },
+    "latitud": "11.01561",
+    "longitud": "-74.82071",
+    "no": "28.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 28\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 11.01561\u003Cbr\u003ELONGITUD: -74.82071",
+    "name": "Calle 94 # 57-57",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.82071, 11.01561]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.78356, 10.94276]
+    },
+    "latitud": "10.94276",
+    "longitud": "-74.78356",
+    "no": "29.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 29\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.94276\u003Cbr\u003ELONGITUD: -74.78356",
+    "name": "Calle 30 # 5A-121 (Coltanques)",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.78356, 10.94276]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.82306, 10.97935]
+    },
+    "latitud": "10.97935",
+    "longitud": "-74.82306",
+    "no": "30.0",
+    "tipo_de_infracci_n": "EXCESO DE VELOCIDAD",
+    "description": "No.: 30\u003Cbr\u003ETIPO DE INFRACCIÓN: EXCESO DE VELOCIDAD\u003Cbr\u003ELATITUD: 10.97935\u003Cbr\u003ELONGITUD: -74.82306",
+    "name": "Calle 82B # 26C1 - 60 (casa esquina)",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.82306, 10.97935]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.79734, 10.95467]
+    },
+    "latitud": "10.95467",
+    "longitud": "-74.79734",
+    "no": "31.0",
+    "tipo_de_infracci_n": "BLOQUEAR CRUCE",
+    "description": "No.: 31\u003Cbr\u003ETIPO DE INFRACCIÓN: BLOQUEAR CRUCE \u003Cbr\u003ELATITUD: 10.95467\u003Cbr\u003ELONGITUD: -74.79734",
+    "name": "Calle 45B con carrera 14",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.79734, 10.95467]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.81254, 11.0074]
+    },
+    "latitud": "11.0074",
+    "longitud": "-74.81254",
+    "no": "32.0",
+    "tipo_de_infracci_n": "BLOQUEAR CRUCE",
+    "description": "No.: 32\u003Cbr\u003ETIPO DE INFRACCIÓN: BLOQUEAR CRUCE \u003Cbr\u003ELATITUD: 11.0074\u003Cbr\u003ELONGITUD: -74.81254",
+    "name": "Calle 82 con carrera 56",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.81254, 11.0074]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.78975, 10.98771]
+    },
+    "latitud": "10.98771",
+    "longitud": "-74.78975",
+    "no": "33.0",
+    "tipo_de_infracci_n": "BLOQUEAR CRUCE",
+    "description": "No.: 33\u003Cbr\u003ETIPO DE INFRACCIÓN: BLOQUEAR CRUCE \u003Cbr\u003ELATITUD: 10.98771\u003Cbr\u003ELONGITUD: -74.78975",
+    "name": "Calle 53 con carrera 45",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.78975, 10.98771]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.8034, 10.99322]
+    },
+    "latitud": "10.99322",
+    "longitud": "-74.8034",
+    "no": "34.0",
+    "tipo_de_infracci_n": "BLOQUEAR CRUCE",
+    "description": "No.: 34\u003Cbr\u003ETIPO DE INFRACCIÓN: BLOQUEAR CRUCE \u003Cbr\u003ELATITUD: 10.99322\u003Cbr\u003ELONGITUD: -74.8034",
+    "name": "Calle 70 con carrera 46",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.8034, 10.99322]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.7775, 10.98383]
+    },
+    "latitud": "10.98383",
+    "longitud": "-74.7775",
+    "no": "35.0",
+    "tipo_de_infracci_n": "BLOQUEAR CRUCE",
+    "description": "No.: 35\u003Cbr\u003ETIPO DE INFRACCIÓN: BLOQUEAR CRUCE \u003Cbr\u003ELATITUD: 10.98383\u003Cbr\u003ELONGITUD: -74.7775",
+    "name": "Calle 34 con carrera 45",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.7775, 10.98383]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.78989, 10.96959]
+    },
+    "latitud": "10.96959",
+    "longitud": "-74.78989",
+    "no": "36.0",
+    "tipo_de_infracci_n": "BLOQUEAR CRUCE",
+    "description": "No.: 36\u003Cbr\u003ETIPO DE INFRACCIÓN: BLOQUEAR CRUCE \u003Cbr\u003ELATITUD: 10.96959\u003Cbr\u003ELONGITUD: -74.78989",
+    "name": "Calle 45 con carrera 27",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.78989, 10.96959]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.80666, 10.99261]
+    },
+    "latitud": "10.99261",
+    "longitud": "-74.80666",
+    "no": "37.0",
+    "tipo_de_infracci_n": "BLOQUEAR CRUCE",
+    "description": "No.: 37\u003Cbr\u003ETIPO DE INFRACCIÓN: BLOQUEAR CRUCE \u003Cbr\u003ELATITUD: 10.99261\u003Cbr\u003ELONGITUD: -74.80666",
+    "name": "Calle 72 con carrera 44",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.80666, 10.99261]
+    }
+  },
+  {
+    "geocoded_column": {
+      "type": "Point",
+      "coordinates": [-74.81435, 11.00457]
+    },
+    "latitud": "11.00457",
+    "longitud": "-74.81435",
+    "no": "38.0",
+    "tipo_de_infracci_n": "BLOQUEAR CRUCE",
+    "description": "No.: 38\u003Cbr\u003ETIPO DE INFRACCIÓN: BLOQUEAR CRUCE \u003Cbr\u003ELATITUD: 11.00457\u003Cbr\u003ELONGITUD: -74.81435",
+    "name": "Calle 82 con carrera 51B",
+    "point": {
+      "type": "Point",
+      "coordinates": [-74.81435, 11.00457]
+    }
+  }
+]
