@@ -24,9 +24,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   animateCounter(camaras.length);
   attachUI();
   // Register service worker for PWA/offline support
+  // Register service worker for PWA/offline support
   if('serviceWorker' in navigator){
     try{
-      await navigator.serviceWorker.register('/sw.js');
+      // Use relative path so registration works when site is hosted at /repo/ on GitHub Pages
+      await navigator.serviceWorker.register('./sw.js');
       console.log('Service Worker registered');
     }catch(e){
       console.warn('Service Worker registration failed', e);
@@ -173,17 +175,36 @@ async function initFuse(list){
   try{
     // Si Fuse no está disponible globalmente, cargamos la versión UMD desde CDN
     if(typeof Fuse === 'undefined' && typeof window !== 'undefined'){
-      await new Promise((resolve, reject) => {
-        const s = document.createElement('script');
-        s.src = 'https://cdn.jsdelivr.net/npm/fuse.js@7.6.0/dist/fuse.min.js';
-        s.onload = () => resolve();
-        s.onerror = () => reject(new Error('Error loading Fuse.js'));
-        document.head.appendChild(s);
-      });
+      // Try primary CDN (jsDelivr), then unpkg as fallback
+      const cdns = [
+        'https://cdn.jsdelivr.net/npm/fuse.js@7.6.0/dist/fuse.min.js',
+        'https://unpkg.com/fuse.js@7.6.0/dist/fuse.min.js'
+      ];
+      let loaded = false;
+      for(const url of cdns){
+        try{
+          await new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = url;
+            s.async = true;
+            s.onload = () => resolve();
+            s.onerror = () => reject(new Error('Error loading ' + url));
+            document.head.appendChild(s);
+          });
+          loaded = true;
+          break;
+        }catch(err){
+          console.warn(err);
+        }
+      }
+      if(!loaded){
+        console.warn('Fuse.js could not be loaded from CDNs');
+      }
     }
 
     if(typeof Fuse === 'undefined'){
-      console.warn('Fuse not available after dynamic load; search will be disabled');
+      // Provide a tiny fallback: simple substring search (case-insensitive) so search still works
+      console.warn('Fuse not available after attempts; using simple substring fallback search');
       fuse = null;
       return;
     }
@@ -201,12 +222,23 @@ function debounce(fn, wait=300){
   return (...args)=>{clearTimeout(t);t=setTimeout(()=>fn.apply(this,args),wait)};
 }
 
+// Simple substring search fallback when Fuse.js is not available
+function simpleSearch(list, q){
+  const qq = q.toLowerCase();
+  return list.filter(item => {
+    return (item.nombre || item.name || '').toString().toLowerCase().includes(qq)
+      || (item.direccion || item.description || '').toString().toLowerCase().includes(qq)
+      || (item.tipo || '').toString().toLowerCase().includes(qq);
+  });
+}
+
 function attachUI(){
   searchInput.addEventListener('input', debounce((e)=>{
     const q = e.target.value.trim();
     let results = camaras;
-    if(q && fuse){
-      results = fuse.search(q).map(r=>r.item);
+    if(q){
+      if(fuse) results = fuse.search(q).map(r=>r.item);
+      else results = simpleSearch(camaras, q);
     }
     // aplicar filtros: si no hay filtros activos, mostrar todo
     const activeTypes = Array.from(document.querySelectorAll('.filters input:checked')).map(i=>i.dataset.type);
@@ -222,7 +254,10 @@ function attachUI(){
   document.querySelectorAll('.filters input').forEach(cb=>cb.addEventListener('change', ()=>{
     const q = searchInput.value.trim();
     let results = camaras;
-    if(q && fuse) results = fuse.search(q).map(r=>r.item);
+    if(q){
+      if(fuse) results = fuse.search(q).map(r=>r.item);
+      else results = simpleSearch(camaras, q);
+    }
     const activeTypes = Array.from(document.querySelectorAll('.filters input:checked')).map(i=>i.dataset.type);
     if(activeTypes.length > 0){
       results = results.filter(c => activeTypes.some(t => (c.tipo||'').toUpperCase().includes(t)));
