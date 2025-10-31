@@ -1,15 +1,17 @@
 // Minimal service worker: cache core assets and serve them; update strategy: cache-first for offline
 const CACHE_NAME = 'fotomultaslab-v1';
+// Use relative paths so the service worker works correctly when the site is hosted under
+// a project subpath (e.g. /fotomultaslab/ on GitHub Pages).
 const CORE_ASSETS = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/assets/logo.svg',
-  '/assets/icons/camera-speed.svg',
-  '/assets/icons/camera-light.svg',
-  '/assets/icons/camera-block.svg',
-  '/data/camaras.json'
+  './',
+  './index.html',
+  './style.css',
+  './script.js',
+  './assets/logo.svg',
+  './assets/icons/camera-speed.svg',
+  './assets/icons/camera-light.svg',
+  './assets/icons/camera-block.svg',
+  './data/camaras.json'
 ];
 
 self.addEventListener('install', (event) => {
@@ -34,10 +36,19 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  event.respondWith(
+    event.respondWith(
     caches.match(req).then(cached => cached || fetch(req).then(res => {
-      // cache fetched assets (simple strategy)
-      return caches.open(CACHE_NAME).then(cache => { cache.put(req, res.clone()); return res; });
+      // Only cache same-origin, http(s) requests. Some browser extensions use chrome-extension://
+      // schemes which will throw when attempting to cache. Guard against that.
+      try{
+        const url = new URL(req.url);
+        if(url.origin === self.location.origin && (url.protocol === 'http:' || url.protocol === 'https:')){
+          return caches.open(CACHE_NAME).then(cache => { cache.put(req, res.clone()); return res; });
+        }
+      }catch(e){
+        // ignore invalid URLs or cross-origin requests
+      }
+      return res;
     }).catch(()=>{}) )
   );
 });
