@@ -66,6 +66,7 @@
     <div class="header-right">
       <div class="counter">0</div>
       <button id="btnTheme" class="btn-icon" aria-label="Cambiar tema">🌙</button>
+      <button id="btnTour" class="btn-icon" aria-label="Abrir guía">❓</button>
       <button id="btnMiUbicacion" class="btn-icon" title="Mi ubicación">📍</button>
     </div>
   </header>
@@ -100,6 +101,25 @@
       <a href="https://github.com/YamiCueto/fotomultaslab" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </footer>
+
+  <!-- User tour / stepper -->
+  <div id="tourOverlay" class="tour-overlay" aria-hidden="true">
+    <div class="tour" role="dialog" aria-modal="true" aria-labelledby="tourTitle">
+      <h3 id="tourTitle">Bienvenido a Fotomultas Lab</h3>
+      <div id="tourContent" class="tour-content">
+        <!-- steps injected by script -->
+      </div>
+      <div class="tour-controls">
+        <button id="tourPrev" class="btn-primary">Anterior</button>
+        <div class="tour-dots" id="tourDots"></div>
+        <button id="tourNext" class="btn-primary">Siguiente</button>
+      </div>
+      <div class="tour-actions">
+        <button id="tourSkip" class="btn-link">Omitir</button>
+        <button id="tourDone" class="btn-primary">Finalizar</button>
+      </div>
+    </div>
+  </div>
 
   <script src="./script.js"></script>
 </body>

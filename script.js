@@ -62,6 +62,109 @@ document.addEventListener('DOMContentLoaded', async () => {
     })
 });
 
+/* ==================== User Tour / Stepper ==================== */
+const tourSteps = [
+  {
+    title: 'Buscar cámaras',
+    body: 'Usa la barra de búsqueda para buscar direcciones o nombres de cámaras. La búsqueda es difusa y funciona con errores tipográficos.'
+  },
+  {
+    title: 'Filtros',
+    body: 'Activa los filtros de Velocidad, Luz roja o Cruce para mostrar sólo ciertos tipos de cámaras. Si no hay filtros activados, se muestran todas.'
+  },
+  {
+    title: 'Mapa y marcadores',
+    body: 'Interactúa con el mapa: haz zoom, arrastra y pulsa en los marcadores para ver más información y enlaces a Google Maps.'
+  },
+  {
+    title: 'Clusterización',
+    body: 'Cuando hay muchas cámaras cercanas se agrupan en clusters. Haz zoom para expandirlos y ver cada cámara individual.'
+  },
+  {
+    title: 'Mi ubicación',
+    body: 'Pulsa el botón 📍 para centrar el mapa en tu ubicación (si otorgas permiso al navegador).'
+  },
+  {
+    title: 'Instalar como App',
+    body: 'Puedes instalar esta web como una app en tu dispositivo (Add to Home). Para mejor soporte, asegúrate de usar el icono que se añadió al manifest.'
+  }
+];
+
+function buildTour(){
+  const overlay = document.getElementById('tourOverlay');
+  const content = document.getElementById('tourContent');
+  const dots = document.getElementById('tourDots');
+  content.innerHTML = '';
+  dots.innerHTML = '';
+  tourSteps.forEach((s, idx) => {
+    const step = document.createElement('div');
+    step.className = 'tour-step';
+    step.id = 'tour-step-' + idx;
+    step.innerHTML = `<h4>${s.title}</h4><p>${s.body}</p>`;
+    content.appendChild(step);
+
+    const d = document.createElement('div');
+    d.className = 'dot';
+    d.dataset.idx = idx;
+    dots.appendChild(d);
+  });
+}
+
+let tourIndex = 0;
+function showTour(idx=0){
+  buildTour();
+  tourIndex = idx;
+  const overlay = document.getElementById('tourOverlay');
+  overlay.setAttribute('aria-hidden','false');
+  updateTour();
+}
+function hideTour(){
+  const overlay = document.getElementById('tourOverlay');
+  overlay.setAttribute('aria-hidden','true');
+}
+function updateTour(){
+  tourSteps.forEach((_,i)=>{
+    const el = document.getElementById('tour-step-'+i);
+    if(el) el.classList.toggle('active', i===tourIndex);
+    const dot = document.querySelector(`#tourDots .dot[data-idx='${i}']`);
+    if(dot) dot.classList.toggle('active', i===tourIndex);
+  });
+  document.getElementById('tourPrev').disabled = (tourIndex===0);
+  document.getElementById('tourNext').textContent = (tourIndex===tourSteps.length-1)?'Finalizar':'Siguiente';
+}
+
+document.addEventListener('click', (e)=>{
+  if(e.target && e.target.id === 'btnTour'){
+    showTour(0);
+  }
+});
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  // wire tour controls
+  const prev = document.getElementById('tourPrev');
+  const next = document.getElementById('tourNext');
+  const skip = document.getElementById('tourSkip');
+  const done = document.getElementById('tourDone');
+  const overlay = document.getElementById('tourOverlay');
+
+  if(prev) prev.addEventListener('click', ()=>{ if(tourIndex>0){ tourIndex--; updateTour(); } });
+  if(next) next.addEventListener('click', ()=>{ if(tourIndex < tourSteps.length-1){ tourIndex++; updateTour(); } else { localStorage.setItem('fotomultas_tour_seen','1'); hideTour(); } });
+  if(skip) skip.addEventListener('click', ()=>{ localStorage.setItem('fotomultas_tour_seen','1'); hideTour(); });
+  if(done) done.addEventListener('click', ()=>{ localStorage.setItem('fotomultas_tour_seen','1'); hideTour(); });
+  if(overlay) overlay.addEventListener('click', (ev)=>{ if(ev.target===overlay){ localStorage.setItem('fotomultas_tour_seen','1'); hideTour(); } });
+
+  // show tour automatically for first-time users
+  try{
+    const seen = localStorage.getItem('fotomultas_tour_seen');
+    if(!seen){
+      // small timeout so UI is ready
+      setTimeout(()=> showTour(0), 700);
+    }
+  }catch(e){ /* ignore storage errors */ }
+});
+
+/* ==================== End tour ==================== */
+
 async function cargarCamaras(){
   try{
     const res = await fetch('./data/camaras.json');
