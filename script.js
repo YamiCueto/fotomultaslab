@@ -32,6 +32,32 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.warn('Service Worker registration failed', e);
     }
   }
+  
+    // Mobile sidebar toggle wiring: hamburger, close and overlay
+    const toggleBtn = document.getElementById('toggleSidebar')
+    const closeBtn = document.getElementById('closeSidebar')
+    const overlayEl = document.getElementById('overlay')
+    const sidebarEl = document.getElementById('sidebar')
+  
+    function openSidebar(){
+        if(!sidebarEl) return
+        sidebarEl.classList.add('active')
+        if(overlayEl) overlayEl.classList.add('active')
+    }
+    function closeSidebar(){
+        if(!sidebarEl) return
+        sidebarEl.classList.remove('active')
+        if(overlayEl) overlayEl.classList.remove('active')
+    }
+  
+    if(toggleBtn) toggleBtn.addEventListener('click', openSidebar)
+    if(closeBtn) closeBtn.addEventListener('click', closeSidebar)
+    if(overlayEl) overlayEl.addEventListener('click', closeSidebar)
+  
+    // close with Escape key
+    document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape') closeSidebar()
+    })
 });
 
 async function cargarCamaras(){

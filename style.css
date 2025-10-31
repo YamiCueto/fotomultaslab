@@ -31,6 +31,7 @@ body {
 
 .panel {
     background: rgba(22, 27, 51, 0.7);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
     backdrop-filter: blur(12px) saturate(140%);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -81,6 +82,9 @@ body {
     font-size: 1.1rem
 }
 
+/* Mobile toggle button (hidden on desktop) */
+.toggle-sidebar{display:none;background:transparent;border:0;color:var(--text);font-size:1.2rem;padding:6px}
+
 .counter {
     background: linear-gradient(90deg, var(--accent), var(--accent-hover));
     padding: 6px 10px;
@@ -91,6 +95,21 @@ body {
 .app-layout {
     display: flex;
     height: calc(100vh - 110px);
+
+/* Footer link styling for better contrast on dark background */
+.footer a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.footer a:hover,
+.footer a:focus {
+    color: var(--accent-hover);
+    outline: 3px solid rgba(255, 107, 53, 0.12);
+    outline-offset: 2px;
+    border-radius: 6px;
+}
     gap: 12px;
     padding: 80px 12px 12px 12px
 }
@@ -224,28 +243,41 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .app-layout {
-        padding-top: 76px
-    }
+    .app-layout { padding-top: 76px }
 
-    .sidebar {
-        position: fixed;
-        left: -100%;
-        top: 72px;
-        height: calc(100vh - 144px);
-        z-index: 1200;
-        width: 80vw;
-        transition: left .25s
+    /* Sidebar as off-canvas panel */
+    .sidebar{
+        position:fixed;
+        left:-110%;
+        top:72px;
+        height:calc(100vh - 144px);
+        z-index:1202;
+        width:86vw;
+        transition:left .28s, transform .28s;
+        transform:translateX(0);
     }
+    .sidebar.active{ left:6px; transform:translateX(0) }
 
-    .sidebar.active {
-        left: 6px
-    }
+    /* Overlay that appears when sidebar is open */
+    .overlay{ position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:1201; opacity:0; pointer-events:none; transition:opacity .18s }
+    .overlay.active{ opacity:1; pointer-events:auto }
+
+    /* Toggle/close buttons */
+    .toggle-sidebar{ display:inline-flex; align-items:center; justify-content:center }
+    .close-sidebar{ display:inline-flex; align-items:center; justify-content:center; position:absolute; right:12px; top:12px; background:transparent; border:0; color:var(--text); font-size:1.2rem }
+
+    /* Compact header on mobile */
+    .header h1{ font-size:1rem }
+    .header .counter{ display:none }
+
+    /* Slightly smaller sidebar width and padding for phone screens */
+    .sidebar .search{ padding:10px }
 }
 
 /* Leaflet tweaks to better integrate dark theme */
 .leaflet-popup-content-wrapper {
     background: rgba(22, 27, 51, 0.85);
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     border-radius: 10px
 }

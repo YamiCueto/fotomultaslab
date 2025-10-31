@@ -56,6 +56,7 @@
 <body>
   <header class="header panel">
     <div class="header-left">
+      <button id="toggleSidebar" class="toggle-sidebar" aria-label="Abrir menú">☰</button>
       <img src="./assets/logo.svg" alt="Logo" class="logo" />
       <h1>Fotomultas Lab</h1>
     </div>
@@ -70,6 +71,7 @@
   <div class="app-layout">
     <aside class="sidebar panel" id="sidebar">
       <div class="sidebar-top">
+        <button id="closeSidebar" class="close-sidebar" aria-label="Cerrar menú">✕</button>
         <input id="searchInput" class="search" placeholder="Buscar dirección o cámara..." aria-label="Buscar cámaras" />
 
         <div class="filters">
@@ -83,6 +85,7 @@
         <!-- Lista de cámaras (dinámica) -->
       </div>
     </aside>
+    <div id="overlay" class="overlay" tabindex="-1"></div>
 
     <main class="map-container">
       <div id="map"></div>
