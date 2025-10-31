@@ -4,8 +4,9 @@
 const mapConfig = {
   center: [10.96854, -74.78132], // Barranquilla
   zoom: 13,
-  tileUrl: 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
-  tileAttribution: '&copy; Stadia Maps, &copy; OSM'
+  // Use OpenStreetMap tiles (public, no API key required)
+  tileUrl: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  tileAttribution: '&copy; OpenStreetMap contributors'
 };
 
 let map, markersCluster, camaras = [], fuse;
