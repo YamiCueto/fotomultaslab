@@ -28,6 +28,13 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+// Handle update messages
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   // For navigation requests, try network first then cache

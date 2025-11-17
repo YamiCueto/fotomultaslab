@@ -23,13 +23,25 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderLista(camaras);
   animateCounter(camaras.length);
   attachUI();
-  // Register service worker for PWA/offline support
-  // Register service worker for PWA/offline support
+  // Register service worker for PWA/offline support with update detection
   if('serviceWorker' in navigator){
     try{
-      // Use relative path so registration works when site is hosted at /repo/ on GitHub Pages
-      await navigator.serviceWorker.register('./sw.js');
+      const reg = await navigator.serviceWorker.register('./sw.js');
       console.log('Service Worker registered');
+      
+      // Check for updates
+      reg.addEventListener('updatefound', () => {
+        const newWorker = reg.installing;
+        newWorker.addEventListener('statechange', () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            // New version available
+            if(confirm('🆕 Nueva versión disponible. ¿Actualizar ahora?')){
+              newWorker.postMessage({ type: 'SKIP_WAITING' });
+              window.location.reload();
+            }
+          }
+        });
+      });
     }catch(e){
       console.warn('Service Worker registration failed', e);
     }
@@ -335,39 +347,31 @@ function simpleSearch(list, q){
   });
 }
 
+function applyFilters(){
+  const q = searchInput.value.trim();
+  let results = camaras;
+  
+  // Apply search
+  if(q){
+    if(fuse) results = fuse.search(q).map(r=>r.item);
+    else results = simpleSearch(camaras, q);
+  }
+  
+  // Apply type filters
+  const activeTypes = Array.from(document.querySelectorAll('.filters input:checked')).map(i=>i.dataset.type);
+  if(activeTypes.length > 0){
+    results = results.filter(c => activeTypes.some(t => (c.tipo||'').toUpperCase().includes(t)));
+  }
+  
+  renderMarkers(results);
+  renderLista(results);
+}
+
 function attachUI(){
-  searchInput.addEventListener('input', debounce((e)=>{
-    const q = e.target.value.trim();
-    let results = camaras;
-    if(q){
-      if(fuse) results = fuse.search(q).map(r=>r.item);
-      else results = simpleSearch(camaras, q);
-    }
-    // aplicar filtros: si no hay filtros activos, mostrar todo
-    const activeTypes = Array.from(document.querySelectorAll('.filters input:checked')).map(i=>i.dataset.type);
-    if(activeTypes.length > 0){
-      results = results.filter(c => activeTypes.some(t => (c.tipo||'').toUpperCase().includes(t)));
-    }
-
-    renderMarkers(results);
-    renderLista(results);
-  }, 250));
-
+  searchInput.addEventListener('input', debounce(applyFilters, 250));
+  
   // filtros
-  document.querySelectorAll('.filters input').forEach(cb=>cb.addEventListener('change', ()=>{
-    const q = searchInput.value.trim();
-    let results = camaras;
-    if(q){
-      if(fuse) results = fuse.search(q).map(r=>r.item);
-      else results = simpleSearch(camaras, q);
-    }
-    const activeTypes = Array.from(document.querySelectorAll('.filters input:checked')).map(i=>i.dataset.type);
-    if(activeTypes.length > 0){
-      results = results.filter(c => activeTypes.some(t => (c.tipo||'').toUpperCase().includes(t)));
-    }
-    renderMarkers(results);
-    renderLista(results);
-  }));
+  document.querySelectorAll('.filters input').forEach(cb=>cb.addEventListener('change', applyFilters));
 
   document.getElementById('btnMiUbicacion').addEventListener('click', ()=>{
     if(!navigator.geolocation){

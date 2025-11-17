@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    
+    - name: Validate JSON syntax
+      run: |
+        echo "Validating data/camaras.json..."
+        node -e "JSON.parse(require('fs').readFileSync('data/camaras.json', 'utf8'))" && echo "✅ JSON válido"
+    
+    - name: Validate data schema
+      run: |
+        node -e "
+        const data = JSON.parse(require('fs').readFileSync('data/camaras.json', 'utf8'));
+        let errors = 0;
+        data.forEach((cam, idx) => {
+          if (!cam.nombre && !cam.name) {
+            console.error(\`❌ Registro \${idx}: falta campo 'nombre' o 'name'\`);
+            errors++;
+          }
+          const lat = parseFloat(cam.latitud);
+          const lon = parseFloat(cam.longitud);
+          if (isNaN(lat) || isNaN(lon)) {
+            console.error(\`❌ Registro \${idx}: coordenadas inválidas lat=\${cam.latitud}, lon=\${cam.longitud}\`);
+            errors++;
+          }
+          if (lat < -90 || lat > 90) {
+            console.error(\`❌ Registro \${idx}: latitud fuera de rango \${lat}\`);
+            errors++;
+          }
+          if (lon < -180 || lon > 180) {
+            console.error(\`❌ Registro \${idx}: longitud fuera de rango \${lon}\`);
+            errors++;
+          }
+        });
+        if (errors > 0) {
+          console.error(\`\n❌ \${errors} errores encontrados en el dataset\`);
+          process.exit(1);
+        }
+        console.log(\`✅ \${data.length} registros validados correctamente\`);
+        "
+    
+    - name: Check for required files
+      run: |
+        test -f index.html || (echo "❌ Falta index.html" && exit 1)
+        test -f style.css || (echo "❌ Falta style.css" && exit 1)
+        test -f script.js || (echo "❌ Falta script.js" && exit 1)
+        test -f manifest.json || (echo "❌ Falta manifest.json" && exit 1)
+        test -f sw.js || (echo "❌ Falta sw.js" && exit 1)
+        test -f data/camaras.json || (echo "❌ Falta data/camaras.json" && exit 1)
+        echo "✅ Todos los archivos core presentes"
+    
+    - name: Lint JavaScript (basic)
+      run: |
+        echo "Checking for syntax errors in script.js..."
+        node -c script.js && echo "✅ script.js sin errores de sintaxis"
+        node -c sw.js && echo "✅ sw.js sin errores de sintaxis"
+    
+    - name: Summary
+      run: |
+        echo "✅ CI passed - proyecto listo para deploy"
