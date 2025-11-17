@@ -1,18 +1,34 @@
-git init
-git add .
-git commit -m "🚀 Initial commit - Mapa interactivo de fotomultas Barranquilla"
-git branch -M main
-git remote add origin https://github.com/YamiCueto/fotomultaslab.git
-git push -u origin main
 # Fotomultas Lab
 
-Mapa interactivo de cámaras de fotodetección en Barranquilla, Colombia. Visualiza cámaras de exceso de velocidad, luz roja y bloqueo de cruce desde un JSON local.
+![Mapa — Fotomultas Lab](./assets/og-image.png)
+
+**Mapa interactivo de cámaras de fotodetección en Barranquilla, Colombia** — ¿Dónde están las cámaras y qué tipo son?
 
 ![Status](https://img.shields.io/badge/status-active-success.svg) ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-Demo pública: https://yamicueto.github.io/fotomultaslab/
+🔗 **Demo pública:** https://yamicueto.github.io/fotomultaslab/
 
-Características principales
+---
+
+## 🚨 Problema
+
+¿Dónde están ubicadas las cámaras de fotodetección en la ciudad? La información oficial suele estar en formatos difíciles de consultar por ciudadanos (PDFs, tablas, portales desactualizados).
+
+## ✅ Nuestra solución
+
+Visualización interactiva open-source que muestra la ubicación exacta y tipo de cámaras (velocidad, luz roja, cruce). Datos abiertos del gobierno transformados en una herramienta útil para la comunidad.
+
+## 📊 Fuentes de datos
+
+- **Gobierno:** Datos abiertos DATT Barranquilla / Secretaría de Tránsito
+- **Formato:** JSON local normalizado (`data/camaras.json`)
+- **Actualización:** Oct 2025 (última publicación oficial)
+
+Consulta [DATA.md](./DATA.md) para detalles del schema y cómo actualizar.
+
+---
+
+## ✨ Características principales
 
 - Mapa interactivo con Leaflet y agrupamiento de marcadores (MarkerCluster).
 - Búsqueda difusa con Fuse.js (con fallback simple si la librería no está disponible).
@@ -82,22 +98,40 @@ Depuración rápida
 - Si Fuse.js no carga por CDN, el proyecto usa un fallback simple (búsqueda por substring). Revisa la consola para ver avisos.
 - Si el Service Worker lanza errores por `cache.put` con esquemas extraños (ej. chrome-extension://), eso está mitigado en `sw.js`.
 
-Contribuir
+## 🗺️ Roadmap
 
-- Abre issues o PRs. Si agregas cámaras a `data/camaras.json` sigue el formato mostrado abajo.
+- **Corto plazo:** Alertas por zona — notificaciones cuando se publique actualización del dataset oficial
+- **Medio plazo:** Panel estadístico (conteo por barrio/tipo), export CSV
+- **Largo plazo:** Replicar plantilla a otras ciudades colombianas (Bogotá, Medellín, Cali)
 
-Formato de muestra para `data/camaras.json`
+Consulta [EXPANSION_TEMPLATE.md](./EXPANSION_TEMPLATE.md) para guía de replicación.
+
+---
+
+## 🤝 Contribuir
+
+¿Tienes datos actualizados, correcciones o mejoras? Lee [CONTRIBUTING.md](./CONTRIBUTING.md) y abre un _issue_ o _pull request_.
+
+**Llamada a la acción:** Si tienes acceso a datos de tu ciudad, ayúdanos a expandir este proyecto cívico. Transparencia + comunidad = impacto.
+
+### Formato de muestra para `data/camaras.json`
 
 ```json
 {
-  "nombre": "Calle ejemplo",
-  "tipo": "EXCESO DE VELOCIDAD",
-  "direccion": "Dirección ejemplo",
-  "latitud": "10.97",
-  "longitud": "-74.78"
+  "nombre": "Calle 50 con Carrera 46",
+  "tipo": "VELOCIDAD",
+  "direccion": "Cll 50 #46-21",
+  "latitud": "10.96854",
+  "longitud": "-74.78132",
+  "fuente": "https://datos.barranquilla.gov.co/...",
+  "fecha_actualizacion": "2025-10-01"
 }
 ```
 
-Licencia
+---
+
+## 📄 Licencia
 
 MIT © 2025 YamiCueto
+
+**Nota:** Este es un proyecto comunitario independiente. Los datos provienen de fuentes oficiales públicas y se presentan sin garantías. Verifica siempre la señalización oficial en las vías.
